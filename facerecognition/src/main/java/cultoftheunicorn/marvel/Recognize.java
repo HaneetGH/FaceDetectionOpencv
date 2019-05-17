@@ -1,5 +1,6 @@
 package cultoftheunicorn.marvel;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -154,6 +155,7 @@ public class Recognize extends AppCompatActivity implements CameraBridgeViewBase
         Log.i(TAG, "Instantiated new " + this.getClass());
     }
 
+    @SuppressLint("HandlerLeak")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -169,6 +171,7 @@ public class Recognize extends AppCompatActivity implements CameraBridgeViewBase
         mPath = Environment.getExternalStorageDirectory()+"/facerecogOCV/";
 
         Log.e("Path", mPath);
+
 
         labelsFile= new Labels(mPath);
 
